@@ -1,8 +1,7 @@
 package com.phos.apps;
 
 import com.phos.contract.Queue;
-import com.phos.models.BasicQueue;
-import com.phos.models.ListQueue;
+import com.phos.ds.ListQueue;
 
 public class SnowbirdLiftApp {
     private Queue<Gad2Chair> gad2Lift = new ListQueue<>();

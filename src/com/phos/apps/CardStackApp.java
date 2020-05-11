@@ -1,8 +1,7 @@
 package com.phos.apps;
 
 import com.phos.contract.Stack;
-import com.phos.models.BasicStack;
-import com.phos.models.ListStack;
+import com.phos.ds.ListStack;
 
 public class CardStackApp {
 

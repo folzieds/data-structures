@@ -1,4 +1,4 @@
-package com.phos.models;
+package com.phos.ds;
 
 import com.phos.contract.Queue;
 

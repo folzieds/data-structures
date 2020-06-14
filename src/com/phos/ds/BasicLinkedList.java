@@ -60,6 +60,49 @@ public class BasicLinkedList<X> {
 
     }
 
+    public X get(int position){
+        if (first == null)
+            throw new IllegalStateException("The linked list is empty");
+
+        Node currentNode = first;
+
+        for(int i =1; i < size() && currentNode.getNodeItem() != null; i++){
+            if (i == position)
+                return currentNode.getNodeItem();
+            currentNode = currentNode.getNextNode();
+        }
+        throw new IllegalStateException("could not find position");
+    }
+
+    public int find(X item){
+        if(first == null)
+            throw new IllegalStateException("the list is empty");
+        Node currentNode = first;
+
+        for(int i = 1; i < size() && currentNode.getNodeItem() != null; i++){
+            if (currentNode.getNodeItem().equals(item))
+                return i;
+            currentNode = currentNode.getNextNode();
+        }
+        // returns -1 if nothing is found
+        return -1;
+    }
+
+    @Override
+    public String toString() {
+        StringBuffer content = new StringBuffer();
+
+        Node currentNode = first;
+        while (currentNode != null){
+            content.append(currentNode.getNodeItem());
+            currentNode = currentNode.getNextNode();
+
+            if(currentNode != null)
+                content.append(", ");
+        }
+        return content.toString();
+    }
+
     public X removeAt(int position){
         if(size() < position)
             throw new IllegalStateException("The position chosen is greater than the size of the Linked list");
@@ -76,6 +119,7 @@ public class BasicLinkedList<X> {
 
         X nodeItem = currentNode.nodeItem;
         previousNode.setNextNode(currentNode.getNextNode());
+        nodeCount--;
 
         return nodeItem;
 
